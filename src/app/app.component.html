@@ -9,3 +9,18 @@
 <button  (click)="increment()">increment</button>
 <button type="submit" (click)="decrement()">decrement</button>
 <h2>{{counterValue}}</h2>
+
+@if(counterValue<0){
+    <h2 *ngIf="counterValue < 0">dude its going less that 0</h2>
+}
+@else if(counterValue>5) {
+    <h2>dont click it keeps on incresing</h2>
+}
+<button (click)="showStarter()" ngClass="textColorRed">Show Starter</button>
+@if(showStarters){
+    <div *ngFor="let value of starterPokemon">
+        <ul>
+            <li>{{value}}</li>
+        </ul>
+    </div>
+}
